@@ -1,4 +1,5 @@
-using AspNetCurlMiddleware.Middleware.Extensions;
+using AspNetCoreCurlMiddleware.Extensions;
+using AspNetCoreCurlMiddleware.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -26,7 +27,7 @@ namespace AspNetCurlMiddleware
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AspNetCurlMiddleware", Version = "v1" });
             });
-            services.AddSaveAsCurlMiddlewareServices(new Middleware.Models.SaveRequestOptions { LogPath = "request", SaveRequest = true });
+            services.AddSaveAsCurlMiddlewareServices(new SaveRequestOptions { LogPath = "request", SaveRequest = true });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
